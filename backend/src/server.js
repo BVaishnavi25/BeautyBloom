@@ -11,10 +11,8 @@ connectDB()
   });
 
 function start() {
-  const port = process.env.PORT || env.port || 4000;
-
-  app.listen(port, '0.0.0.0', () => {
+  app.listen(env.port, '0.0.0.0', () => {
     const db = require('./db');
-    console.log(`BeautyBloom API running on port ${port} (data store: ${db.name}${db.name === 'memory' ? ' — resets on restart' : ''})`);
+    console.log(`BeautyBloom API running on port ${env.port} (data store: ${db.name}${db.name === 'memory' ? ' — resets on restart' : ''})`);
   });
 }
